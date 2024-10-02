@@ -1,0 +1,8 @@
+<structure interface="nabu.frameworks.attachments.rest.attachment.create:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.database.types.attachmentType" name="attachmentType"/>
+    <field minOccurs="0" name="uri" type="java.net.URI"/>
+    <structure definition="be.nabu.libs.datastore.api.DataProperties" minOccurs="0" name="properties"/>
+    <field name="accept" type="java.lang.Boolean"/>
+</structure>

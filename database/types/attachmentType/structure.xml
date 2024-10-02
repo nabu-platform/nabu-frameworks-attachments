@@ -1,0 +1,16 @@
+<structure collectionName="attachmentTypes" name="attachmentType">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field name="modified" timezone="UTC" type="java.util.Date"/>
+    <field name="name" type="java.lang.String"/>
+    <field comment="You can configure a security context which (combined with the owner) can be used to determine whether a user is allowed to retrieve an attachment" minOccurs="0" name="securityContext" type="java.lang.String"/>
+    <field comment="Whether you need specific permissions for this attachment type. For example &quot;attachment.upload&quot; (generic) vs &quot;attachment.upload.contract&quot; (specific)" minOccurs="0" name="specificPermission" type="java.lang.Boolean"/>
+    <field comment="An optional maximum of this attachment type that is allowed for a given owner. If you go over the amount, we delete the oldest one(s)" minOccurs="0" name="maximumAmount" type="java.lang.Long"/>
+    <field comment="The maximum size allowed for this attachment type" minOccurs="0" name="maximumSize" type="java.lang.Long"/>
+    <field comment="An optional service you can define which will determine whether or not you accept a particular attachment on a particular owner. This might also check for instance the mimetype." minOccurs="0" name="acceptServiceId" type="java.lang.String"/>
+    <field minOccurs="0" name="acceptServiceProperties" type="java.lang.String"/>
+    <field comment="A service to call once a particular attachment has been created. This could be for instance to generate thumbnails." minOccurs="0" name="createdServiceId" type="java.lang.String"/>
+    <field minOccurs="0" name="createdServiceProperties" type="java.lang.String"/>
+    <field comment="You can transform an attachment (e.g. resize it)" minOccurs="0" name="transformServiceId" type="java.lang.String"/>
+    <field minOccurs="0" name="transformServiceProperties" type="java.lang.String"/>
+</structure>

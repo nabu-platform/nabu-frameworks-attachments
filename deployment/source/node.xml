@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-18T09:20:36.898+02:00" lastModified="2024-09-18T09:21:15.475+02:00" leaf="true" version="5">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.services.list</references>
+    <references>nabu.frameworks.attachments.database.types.attachmentType</references>
+</node>

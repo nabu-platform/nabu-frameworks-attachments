@@ -1,0 +1,11 @@
+<structure comment="Transform the attachment in some way. This could for instance be to resize an image" name="pipeline">
+    <structure name="input">
+        <field name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="attachmentType" type="java.lang.String"/>
+        <field name="uri" type="java.net.URI"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="properties"/>
+    </structure>
+    <structure name="output">
+        <field minOccurs="0" name="uri" type="java.net.URI"/>
+    </structure>
+</structure>

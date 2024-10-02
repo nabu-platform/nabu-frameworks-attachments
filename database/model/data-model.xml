@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.attachments.database.types.attachment</type>
+        <x>799</x>
+        <y>169</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.attachments.database.types.attachmentType</type>
+        <x>209</x>
+        <y>166</y>
+    </entries>
+</dataModel>

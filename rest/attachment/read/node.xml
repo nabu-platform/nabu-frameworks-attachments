@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-09-18T11:51:56.071+02:00" lastModified="2024-09-18T12:38:32.890+02:00" leaf="true" version="12">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>nabu.frameworks.attachments.crud.attachment.services.get</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.attachments.database.types.attachmentType</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.services.get</references>
+</node>

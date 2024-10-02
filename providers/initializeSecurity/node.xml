@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-11-09T16:09:49.030+01:00" lastModified="2024-09-18T10:16:04.882+02:00" leaf="true" version="36">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.cms.core.types.emodel.core.Node</references>
+    <references>nabu.cms.core.types.emodel.core.Role</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.String</references>
+    <references>java.util.UUID</references>
+    <references>nabu.cms.core.hooks.security.initialize</references>
+    <references>nabu.utils.types.NodeDescription</references>
+    <todos>
+        <id>nabu.frameworks.attachments.providers.initializeSecurity:8b9aedf4ba3247c0b986a8928a5a8524</id>
+        <tags>nabu</tags>
+        <todo>create permissions based on the attachment type configuration</todo>
+    </todos>
+</node>

@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="name" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.database.types.attachmentType" name="attachmentType"/>
+    </structure>
+</structure>

@@ -1,0 +1,40 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="6eb41d211236473b9f3bb3299c2d17f0"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="79f5bcb03b5c4498b42998ca57ac8f3d"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5b9667ea66eb4a468aa9a2311e87f741"
+				serviceId="nabu.services.jdbc.Services.merge"
+				resultName="result448edae2fcfa4319bd87da51f44d678b"
+				temporaryMapping="true"
+				x="88"
+				y="124"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="394b5fc6a6034340a57b65e86662518e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connection</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6ad583efa4a240a2a605350f2d644325"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/attachmentTypes</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

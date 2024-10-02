@@ -1,0 +1,40 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="5a03202fafc94ed6825d4ba71860a2ba"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="0e60ef3bf7144e50be6a5a6f76041876"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1475af525e98489890ef393d59a8fd1a"
+				serviceId="nabu.frameworks.attachments.crud.attachmentType.services.list"
+				resultName="resultf7d52b23cb224ac69beb7ae44262cc03"
+				temporaryMapping="true"
+				x="162"
+				y="86"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b3866f747dbe42cf85d8527ac5c08eeb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/name</from>
+				<to>filter/name[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9e443b5c70f54bef9f71b08b25cac0d0"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultf7d52b23cb224ac69beb7ae44262cc03/results[0]</from>
+			<to>output/attachmentType</to>
+		</steps>
+	</steps>
+</sequence>

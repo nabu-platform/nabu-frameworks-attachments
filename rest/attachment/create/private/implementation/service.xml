@@ -1,0 +1,76 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="bdbb282ecafc4c22b4d8d90484e115b8"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b83872e57b774d40a07449f5ea476a8b"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="fe999ad99b9f433d86c7dab0c6d05b5c"
+				serviceId="nabu.frameworks.attachments.services.type.create"
+				resultName="result568f4ef1def14761a1188bd307bbf640"
+				temporaryMapping="true"
+				x="276"
+				y="68"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b92bda29adb84047b31e6cf52807918e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/ownerId</from>
+				<to>ownerId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="49536eb0f15a46fe91529f958da1b806"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/attachmentType</from>
+				<to>attachmentType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f27c839006714158833d331895693692"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content</from>
+				<to>content</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="68a4d17e64554855a50f9ca21c4c416f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/meta/contentType</from>
+				<to>contentType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="42a0c449531841e6b337969ceae03eff"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/meta/fileName</from>
+				<to>name</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="46957842cd524fd8b7fb1ce889fea0a1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result568f4ef1def14761a1188bd307bbf640/attachment</from>
+			<to>output/content</to>
+		</steps>
+	</steps>
+</sequence>

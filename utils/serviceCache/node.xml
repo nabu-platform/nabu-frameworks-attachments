@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.cache.service.CacheManager" created="2024-09-18T09:19:38.855+02:00" lastModified="2024-09-18T09:20:11.860+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.utils.memoryCache</references>
+    <references>nabu.frameworks.attachments.services.type.get</references>
+</node>

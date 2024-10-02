@@ -1,0 +1,11 @@
+<structure comment="Whether you accept a particular attachment type on a particular owner. &#10;The check can be purely on type or for instance dig deeper into state of the owner, current attachments already present etc." name="pipeline">
+    <structure name="input">
+        <field name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="attachmentType" type="java.lang.String"/>
+        <field comment="The attachment is already stored because it is inherently a stream. This allows you to not only check the proclaimed mime type but also the actual data." name="uri" type="java.net.URI"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="properties"/>
+    </structure>
+    <structure name="output">
+        <field name="accept" type="java.lang.Boolean"/>
+    </structure>
+</structure>

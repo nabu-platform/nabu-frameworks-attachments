@@ -1,0 +1,11 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="7600fbe2-0ac3-4f3d-8aab-bf32a7f3259f"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="TODO: create permissions based on the attachment type configuration"
+			disabled="false"
+			id="8b9aedf4ba3247c0b986a8928a5a8524"
+			lineNumber="2">
+	</steps>
+</sequence>
