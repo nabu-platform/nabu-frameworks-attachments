@@ -2,4 +2,101 @@
 		disabled="false"
 		id="ef403cf9037e452698d244d1a844c14d"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="279019ea917547de81b41687177115d8"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="3caa5c5cdc1745ec8d89bb4129c47a02"
+				serviceId="nabu.frameworks.attachments.services.type.get"
+				resultName="result3736edb15ab34e25af7248c41145a91c"
+				temporaryMapping="true"
+				x="231"
+				y="44"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ce4d65969b584ba0b62a059d5b72012c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/attachmentType</from>
+				<to>name</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7e5d7cd3f4bc4f1c84464fd35e2f7250"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result3736edb15ab34e25af7248c41145a91c/attachmentType</from>
+			<to>attachmentType</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Attachment type not found: &quot; + input/path/attachmentType"
+			disabled="false"
+			id="931e5606a8b34eb196e330fd56d7a84f"
+			label="!attachmentType"
+			lineNumber="3"
+			code="404"
+			message="Attachment type not found"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="adba3053c9db4be49b223c4e124fab73"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8dd863bfe6aa4773a636dcc8daeb06e7"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="result3d65300bf41e4cdd8052644f18fb42c8"
+				temporaryMapping="true"
+				x="131"
+				y="76"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0dec344b27064aaa90a88f89834c2d08"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/ownerId</from>
+				<to>filter/ownerId[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="204251f8e1ea4a7599f4fbfa36ac690d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachmentType/id</from>
+				<to>filter/attachmentTypeId[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b63bdd6a4f4a4090b914dc338c282360"
+				mask="true"
+				optional="false"
+				fixedValue="false">
+			<from>result3d65300bf41e4cdd8052644f18fb42c8/results</from>
+			<to>output/content/attachments</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ee3c8f16881f4be1a1131e8e05e69b3f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result3d65300bf41e4cdd8052644f18fb42c8/page</from>
+			<to>output/content/page</to>
+		</steps>
+	</steps>
 </sequence>

@@ -1,0 +1,4 @@
+<structure name="attachmentList">
+    <structure allow="id, ownerId, attachmentTypeId, name, title, description" definition="nabu.frameworks.attachments.rest.attachment.attachment" maxOccurs="unbounded" minOccurs="0" name="attachments"/>
+    <structure definition="be.nabu.eai.repository.api.Page" minOccurs="0" name="page"/>
+</structure>

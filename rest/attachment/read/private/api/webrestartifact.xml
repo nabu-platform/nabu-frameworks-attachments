@@ -6,8 +6,10 @@
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <outputAsStream>true</outputAsStream>
+    <token>true</token>
     <lenient>true</lenient>
-    <webApplicationId>false</webApplicationId>
+    <webApplicationId>true</webApplicationId>
     <geoPosition>false</geoPosition>
     <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <language>false</language>

@@ -6,6 +6,7 @@
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
+    <output>nabu.frameworks.attachments.rest.attachment.attachmentList</output>
     <token>true</token>
     <lenient>true</lenient>
     <webApplicationId>true</webApplicationId>

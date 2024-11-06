@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2024-10-02T16:04:03.743+02:00" lastModified="2024-10-02T16:07:25.378+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.rest.attachment.read</references>
+    <references>nabu.frameworks.attachments.rest.attachment.create</references>
+    <references>nabu.frameworks.attachments.rest.attachment.list</references>
+</node>

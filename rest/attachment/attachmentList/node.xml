@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2024-10-02T16:04:53.996+02:00" lastModified="2024-10-02T16:05:02.288+02:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.rest.attachment.attachment</references>
+    <references>be.nabu.eai.repository.api.Page</references>
+</node>

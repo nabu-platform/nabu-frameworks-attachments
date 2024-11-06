@@ -7,6 +7,7 @@
     <field comment="Whether you need specific permissions for this attachment type. For example &quot;attachment.upload&quot; (generic) vs &quot;attachment.upload.contract&quot; (specific)" minOccurs="0" name="specificPermission" type="java.lang.Boolean"/>
     <field comment="An optional maximum of this attachment type that is allowed for a given owner. If you go over the amount, we delete the oldest one(s)" minOccurs="0" name="maximumAmount" type="java.lang.Long"/>
     <field comment="The maximum size allowed for this attachment type" minOccurs="0" name="maximumSize" type="java.lang.Long"/>
+    <field comment="A regex to match the content type, e.g. &quot;image/.*&quot;" minOccurs="0" name="contentTypeRegex" type="java.lang.String"/>
     <field comment="An optional service you can define which will determine whether or not you accept a particular attachment on a particular owner. This might also check for instance the mimetype." minOccurs="0" name="acceptServiceId" type="java.lang.String"/>
     <field minOccurs="0" name="acceptServiceProperties" type="java.lang.String"/>
     <field comment="A service to call once a particular attachment has been created. This could be for instance to generate thumbnails." minOccurs="0" name="createdServiceId" type="java.lang.String"/>

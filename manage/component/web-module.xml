@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.frameworks.attachments.crud.attachment</webFragments>
+    <webFragments>nabu.frameworks.attachments.crud.attachmentType</webFragments>
+</webModule>

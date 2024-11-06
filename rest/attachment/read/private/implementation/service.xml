@@ -2,4 +2,66 @@
 		disabled="false"
 		id="9f37d79e6f6d4cf6ac30700f768af387"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="0c1eed8bc96d4110a0326e046fb4681c"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="904ac77e695444bfa653dd6fef5e2500"
+				serviceId="nabu.frameworks.attachments.services.read"
+				resultName="result13de6000534e498ba6ca8a64fd7616cd"
+				temporaryMapping="true"
+				x="283"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d8ad467456294b1583889a3805fbb695"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/attachmentId</from>
+				<to>attachmentId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="81d097c155e14057bd139ac6e02122ec"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result13de6000534e498ba6ca8a64fd7616cd/attachment/contentType</from>
+			<to>output/meta/contentType</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7807ea91ba394dec8099f1ff772ded69"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result13de6000534e498ba6ca8a64fd7616cd/attachment/size</from>
+			<to>output/meta/contentLength</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="197a9646c29d4af48ef616f0b9b1b5e0"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result13de6000534e498ba6ca8a64fd7616cd/attachment/name</from>
+			<to>output/meta/fileName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="24e2159284634c6683e32cad2e73c4cb"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result13de6000534e498ba6ca8a64fd7616cd/stream</from>
+			<to>output/content</to>
+		</steps>
+	</steps>
 </sequence>

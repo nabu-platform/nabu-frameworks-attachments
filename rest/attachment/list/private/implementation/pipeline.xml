@@ -1,4 +1,5 @@
 <structure interface="nabu.frameworks.attachments.rest.attachment.list:api" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.database.types.attachmentType" name="attachmentType"/>
 </structure>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-09-18T09:15:42.168+02:00" lastModified="2024-09-18T11:47:08.072+02:00" leaf="true" version="25">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-09-18T09:15:42.168+02:00" lastModified="2024-10-24T08:31:37.672+02:00" leaf="true" version="27">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.attachments.services.store</references>
     <references>nabu.web.application.Services.hasPermission</references>
     <references>be.nabu.libs.datastore.api.DataProperties</references>
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.utils.String.join</references>
     <references>nabu.frameworks.attachments.rest.attachment.attachment</references>
-    <references>nabu.frameworks.attachments.services.type.create</references>
     <references>java.lang.Boolean</references>
     <references>nabu.frameworks.attachments.services.type.get</references>
     <references>java.lang.String</references>

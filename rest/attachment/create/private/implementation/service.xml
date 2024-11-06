@@ -9,7 +9,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fe999ad99b9f433d86c7dab0c6d05b5c"
-				serviceId="nabu.frameworks.attachments.services.type.create"
+				serviceId="nabu.frameworks.attachments.services.store"
 				resultName="result568f4ef1def14761a1188bd307bbf640"
 				temporaryMapping="true"
 				x="276"

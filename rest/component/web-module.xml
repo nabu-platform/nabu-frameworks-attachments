@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.frameworks.attachments.rest.attachment.read</webFragments>
+    <webFragments>nabu.frameworks.attachments.rest.attachment.create</webFragments>
+    <webFragments>nabu.frameworks.attachments.rest.attachment.list</webFragments>
+</webModule>
