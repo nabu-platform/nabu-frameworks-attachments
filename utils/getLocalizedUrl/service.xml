@@ -2,10 +2,17 @@
 		disabled="false"
 		id="a5c1ea66146c44dd9c881d4246d78e45"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			disabled="false"
+			id="09f30a3d12d542e9b0fd81f56d70d716"
+			label="input/attachmentId == null"
+			lineNumber="2">
+		<count>1</count>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="b3edd525c85245b9ab04ea412a56a29c"
-			lineNumber="2">
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="8521074732114feba3f80268348f71b8"
@@ -79,7 +86,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="af1749fba2bb4eeda00f1626aee80380"
-			lineNumber="3">
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="f3dd16275b55409898fe3f2a186fa5a3"
@@ -124,7 +131,7 @@
 					mask="false"
 					optional="false"
 					fixedValue="true">
-				<from>=fragment/path + "attachment/" + input/attachment/id + "/content"</from>
+				<from>=information/root + fragment/path + "attachment/" + input/attachmentId + "/content"</from>
 				<to>components/path</to>
 			</steps>
 		</steps>
