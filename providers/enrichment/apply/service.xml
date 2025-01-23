@@ -410,11 +410,11 @@
 									lineNumber="21">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 										disabled="false"
-										id="91b1dc43e91a4c2eb9feb260e1020eb5"
+										id="fcce44a09a224b19a383e04a4ba7d30f"
 										mask="false"
 										optional="false"
 										fixedValue="false">
-									<from>configuration/persist[key == "webApplicationId"]/value</from>
+									<from>configuration/enrich[key == "webApplicationId"]/value</from>
 									<to>webApplicationId</to>
 								</steps>
 							</steps>
