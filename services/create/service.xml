@@ -2,10 +2,89 @@
 		disabled="false"
 		id="17ca7b8d32b745ceb9975bc52f8a9d5a"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			comment="Check owner"
+			disabled="false"
+			id="c85763db00694616b10214e95de994e3"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="a10a56d5015340ff89fd947f07aaff06"
+				label="input/ownerId == null"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="a9b7c1856ded4e7085c2d3c533de50d3"
+					serviceId="nabu.utils.Runtime.getCurrentToken"
+					resultName="result19cedd73b88e4f71a12fb6ad63566793"
+					temporaryMapping="true"
+					x="188"
+					y="34"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c90fda4f7f734d38919a5bbf9c9cd465"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result19cedd73b88e4f71a12fb6ad63566793/token/authenticationId</from>
+				<to>input/ownerId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dd36cb3e874f46efb43178f244fe2c0b"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>staged</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="c8213561f6f8444f905418462ee6d9fa"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="38188d9c84874ea99fa33524cfe75e73"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>false</from>
+				<to>staged</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="2b3bfa5b9d644180902f0d9d003ce131"
+			label="input/ownerId == null"
+			lineNumber="5"
+			message="Could not establish an owner"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Default value 0"
+			disabled="false"
+			id="fa2f814f36ae4a27ad6ff43b95a72cd2"
+			label="input/priority == null"
+			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d717112b394e47a78de69564a7bbd2ba"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>0</from>
+			<to>input/priority</to>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="c38a5304b14f4d2592c1572be07a3cef"
-			lineNumber="2">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="4d2670986daa43a4b4e0f04c8b79feb2"
@@ -42,18 +121,18 @@
 			disabled="false"
 			id="28d3110956cb4edcaaeccf2b2925505d"
 			label="!attachmentType"
-			lineNumber="3"
+			lineNumber="8"
 			message="Invalid attachment type"
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			comment="Check if we accept it"
 			disabled="false"
 			id="4c8f5bd5eba7455fa401f7be71d6f775"
-			lineNumber="4">
+			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="95434fe64dde460d93eefff11485dc7f"
-				lineNumber="5">
+				lineNumber="10">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="ad0f604f77b34a03b363cfb267e80993"
@@ -100,7 +179,7 @@
 				disabled="false"
 				id="0acdb0e3f13b4f3d803624e1226502e0"
 				label="attachmentType/maximumSize != null &amp;&amp; properties/size &gt; attachmentType/maximumSize"
-				lineNumber="6">
+				lineNumber="11">
 			<count>1</count>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Break"
@@ -109,18 +188,18 @@
 				disabled="false"
 				id="231e9712edfe4d5a8cb6c2678c4e0372"
 				label="attachmentType/contentTypeRegex != null &amp;&amp; properties/contentType !~ attachmentType/contentTypeRegex"
-				lineNumber="7">
+				lineNumber="12">
 			<count>1</count>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 				disabled="false"
 				id="919503d1350c44ddafee13e2f515ef5f"
-				lineNumber="8">
+				lineNumber="13">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="b790e0525fb6481893b6d3cfb3569bbf"
 					label="attachmentType/acceptServiceId != null"
-					lineNumber="9">
+					lineNumber="14">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="5a8fe28769ff4b1288dc0a9cb24f4952"
@@ -240,7 +319,7 @@
 					comment="We accept it by default"
 					disabled="false"
 					id="c2fd3d751979464abea2c048f7d6d484"
-					lineNumber="10">
+					lineNumber="15">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="ba5d2e409730424cbe25028f24b02a4e"
@@ -257,7 +336,7 @@
 			disabled="false"
 			id="b35f597571d84615b8c365b8c8bc94d0"
 			label="!accept"
-			lineNumber="11"
+			lineNumber="16"
 			code="400"
 			message="Attachment was not accepted"
 			whitelist="false" xsi:nil="true"/>
@@ -266,12 +345,12 @@
 			disabled="false"
 			id="973fc0c2773140579bdf0d8132e824a8"
 			label="attachmentType/transformServiceId != null"
-			lineNumber="12">
+			lineNumber="17">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Transform it"
 				disabled="false"
 				id="e0dad91831ab4594b315a24a673edc95"
-				lineNumber="13">
+				lineNumber="18">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="8c5a872afdc743dcb85ddb4a03418b6f"
@@ -392,12 +471,12 @@
 				disabled="false"
 				id="567dbaf08b494ecc9575cc4038260134"
 				label="newUri != null"
-				lineNumber="14">
+				lineNumber="19">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Set new uri as actual uri"
 					disabled="false"
 					id="76b13191ef6b4d61af62b7670222d1fe"
-					lineNumber="15">
+					lineNumber="20">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="bf980f0eef4f4e2692cab5a58a295436"
@@ -442,7 +521,7 @@
 					comment="Ensure we delete the new uri if we error out in post create"
 					disabled="false"
 					id="63fe73c51fb24b2a9ac3e457f5d69798"
-					lineNumber="16">
+					lineNumber="21">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="7d5660f8196c4bc78fed2353802761b6"
@@ -477,11 +556,11 @@
 			disabled="false"
 			id="06b95922bb004eefb2040d19bb43e6f8"
 			label="attachmentType/maximumAmount != null &amp;&amp; attachmentType/maximumAmount &gt; 0"
-			lineNumber="17">
+			lineNumber="22">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="a599fc7f37e743449dd1d62d6099217a"
-				lineNumber="18">
+				lineNumber="23">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="21d3b00ebcfa4ce0bcea66248d28a107"
@@ -545,7 +624,7 @@
 				disabled="false"
 				id="276a9eb711044a9cba846b03b02f531f"
 				label="totalRowCount &gt;= attachmentType/maximumAmount"
-				lineNumber="19">
+				lineNumber="24">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="c34a147f3c334d4fa1daaa73f9d7c982"
@@ -599,12 +678,12 @@
 				disabled="false"
 				id="82c7ea0b3cdb43eba1ecfea6fa265b72"
 				label="existingAttachmentsToRemove"
-				lineNumber="20">
+				lineNumber="25">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Delete them from the database"
 					disabled="false"
 					id="39fe2761d9b74dbab5feb063748925d9"
-					lineNumber="21">
+					lineNumber="26">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="77e7add31d5941508de5318360548f0f"
@@ -630,13 +709,13 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.For"
 					disabled="false"
 					id="39dea1a6def740ebbb547ad3ed12dfe9"
-					lineNumber="22"
+					lineNumber="27"
 					variable="uriToDelete">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Delete them only if the transaction completes successfully"
 						disabled="false"
 						id="fdecc61363354a9a938edb3784501650"
-						lineNumber="23">
+						lineNumber="28">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
 							id="c0d430c7af6345b388a65d3c81b48684"
@@ -672,7 +751,7 @@
 			comment="Map the attachment"
 			disabled="false"
 			id="73b918f6f26e4640905d684f11ab9b21"
-			lineNumber="24">
+			lineNumber="29">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="b322c1d9117941929c18f05026a6391a"
@@ -796,11 +875,29 @@
 			<from>properties/name</from>
 			<to>output/attachment/name</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="70806f71afa941738386ebfbb4791b10"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/priority</from>
+			<to>output/attachment/priority</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fa0a0d0c9955417eacfa4594e6a41862"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>staged</from>
+			<to>output/attachment/staged</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="0725bda486c4480eb1eaafde0b775a5d"
-			lineNumber="25">
+			lineNumber="30">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0ff31b893bd64cb0bfd90ef06d7f7b24"
@@ -828,7 +925,7 @@
 			disabled="false"
 			id="2de35413a0264fb98e1ee1348425b9b1"
 			label="attachmentType/createdServiceId != null"
-			lineNumber="26">
+			lineNumber="31">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7179c93768e447ea9381d218d9edbc36"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-18T10:16:15.041+02:00" lastModified="2024-10-24T16:00:29.255+02:00" leaf="true" version="58">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-18T10:16:15.041+02:00" lastModified="2025-02-07T12:42:24.703+01:00" leaf="true" version="62">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.providers.onTransactionClose</references>
     <references>nabu.frameworks.datastore.Services.properties</references>
     <references>nabu.frameworks.attachments.crud.attachment.services.list</references>

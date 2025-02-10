@@ -19,15 +19,6 @@
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="b92bda29adb84047b31e6cf52807918e"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/path/ownerId</from>
-				<to>ownerId</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="49536eb0f15a46fe91529f958da1b806"
 					mask="false"
 					optional="false"
@@ -64,7 +55,7 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="d10453587b744c7da90535d4c231714b"
+					id="f90c012f98f948a7a29d23f56cd0e11c"
 					mask="false"
 					optional="false"
 					fixedValue="false">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-09-18T09:15:42.168+02:00" lastModified="2025-02-07T12:46:44.083+01:00" leaf="true" version="30">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-09-18T09:15:42.168+02:00" lastModified="2025-02-07T12:46:06.267+01:00" leaf="true" version="32">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -8,7 +8,6 @@
     <references>nabu.web.application.Services.hasPermission</references>
     <references>be.nabu.libs.datastore.api.DataProperties</references>
     <references>be.nabu.libs.authentication.api.Token</references>
-    <references>nabu.utils.String.join</references>
     <references>nabu.frameworks.attachments.rest.attachment.attachment</references>
     <references>java.lang.Boolean</references>
     <references>nabu.frameworks.attachments.services.type.get</references>

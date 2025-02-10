@@ -190,6 +190,15 @@
 				<from>input/description</from>
 				<to>description</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="aed42c56779a45eda64b1820bca96a5a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/priority</from>
+				<to>priority</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

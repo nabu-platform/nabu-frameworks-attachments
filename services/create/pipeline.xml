@@ -1,10 +1,11 @@
 <structure name="pipeline">
     <structure name="input" validate="true">
-        <field name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field minOccurs="0" name="ownerId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field name="attachmentType" type="java.lang.String"/>
         <field name="uri" type="java.net.URI"/>
         <field minOccurs="0" name="title" type="java.lang.String"/>
         <field minOccurs="0" name="description" type="java.lang.String"/>
+        <field minOccurs="0" name="priority" type="java.lang.Long"/>
     </structure>
     <structure name="output">
         <structure collectionName="attachments" definition="nabu.frameworks.attachments.database.types.attachment" name="attachment"/>
@@ -16,4 +17,5 @@
     <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachments" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
     <field name="totalRowCount" nillable="false" type="java.lang.Long"/>
     <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachmentsToRemove" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <field name="staged" type="java.lang.Boolean"/>
 </structure>

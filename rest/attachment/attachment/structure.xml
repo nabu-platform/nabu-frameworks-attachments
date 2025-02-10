@@ -1,1 +1,1 @@
-<structure allow="id, ownerId, attachmentTypeId, name, title, description" name="attachment" superType="nabu.frameworks.attachments.database.types.attachment"/>
+<structure allow="id, ownerId, attachmentTypeId, name, title, description,priority" name="attachment" superType="nabu.frameworks.attachments.database.types.attachment"/>

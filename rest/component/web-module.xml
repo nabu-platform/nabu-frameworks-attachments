@@ -3,4 +3,5 @@
     <webFragments>nabu.frameworks.attachments.rest.attachment.read</webFragments>
     <webFragments>nabu.frameworks.attachments.rest.attachment.create</webFragments>
     <webFragments>nabu.frameworks.attachments.rest.attachment.list</webFragments>
+    <webFragments>nabu.frameworks.attachments.rest.attachment.stage</webFragments>
 </webModule>
