@@ -77,12 +77,12 @@
 					recache="false">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="cee3a384d42e47d89bc55ff9fcf27762"
+						id="42e320bf42564051b32879b407e149b3"
 						mask="false"
 						optional="false"
 						fixedValue="false">
 					<from>primaryKeys</from>
-					<to>filter/ownerId</to>
+					<to>filter/anyId</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -350,7 +350,7 @@
 									mask="false"
 									optional="false"
 									fixedValue="false">
-								<from>attachments[ownerId == /primaryKey &amp;&amp; attachmentTypeName == /fieldToEnrich]</from>
+								<from>attachments[(ownerId == /primaryKey || id == /primaryKey) &amp;&amp; attachmentTypeName == /fieldToEnrich]</from>
 								<to>applicableAttachments</to>
 							</steps>
 						</steps>

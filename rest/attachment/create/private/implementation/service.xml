@@ -82,4 +82,49 @@
 			<to>output/content</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="cb8a29f7429d4f6182e798dd7210fc4e"
+			label="output/content"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="71826ea9b39947bbbcac5632a20c6eae"
+				serviceId="nabu.frameworks.attachments.utils.getLocalizedUrl"
+				resultName="resultea2464be197f401fa45b8645cb73e535"
+				temporaryMapping="true"
+				x="313"
+				y="67"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="67f2775885d84a41bfee61b21fe11d04"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>output/content/id</from>
+				<to>attachmentId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="190b219c968d4951a249da92a337d346"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/webApplicationId</from>
+				<to>webApplicationId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="03667e7514bf4f0db7eb19d522915a5f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultea2464be197f401fa45b8645cb73e535/url</from>
+			<to>output/content/url</to>
+		</steps>
+	</steps>
 </sequence>

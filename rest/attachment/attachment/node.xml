@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2024-09-18T09:16:52.243+02:00" lastModified="2025-02-07T12:46:16.130+01:00" leaf="true" version="4">
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2024-09-18T09:16:52.243+02:00" lastModified="2025-02-10T12:20:33.929+01:00" leaf="true" version="8">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.frameworks.attachments.database.types.attachment</references>
+    <references>nabu.frameworks.attachments.providers.enrichment.anyURI</references>
 </node>

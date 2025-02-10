@@ -1,0 +1,142 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="ac5bd3d591274675895bf7f13f10c308"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="830c51a2eb1347d189a564a3aa5a95c4"
+			label="input/attachmentIds != null"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c278b8050fbf4750ad0ef9e88a1c77a6"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="result86655c5a9af349268043b1ee09a1bf95"
+				temporaryMapping="true"
+				x="146"
+				y="66"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d735125fd4f94cbcb21ea23f3deaa3e2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/attachmentIds</from>
+				<to>filter/id</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e841f8ededa64fc2bc1ae415ba0dd372"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>filter/staged</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="175a061195b4488eb71436f59e95e705"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result86655c5a9af349268043b1ee09a1bf95/results</from>
+			<to>attachments</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d92838e7bb0642e7ab1832e756b35dc0"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f792c45ba3404833b6cf6eb282abdc6f"
+				serviceId="nabu.utils.Date.now"
+				resultName="result994c4449a5eb4cd8ab228e04ded4cadf"
+				temporaryMapping="true"
+				x="54"
+				y="70"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="edfa28b0278644c3981326ed75ced4b1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result994c4449a5eb4cd8ab228e04ded4cadf/date</from>
+			<to>date</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="eb0180972f014bdb895147ed6f663dc2"
+			lineNumber="4"
+			variable="attachment">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="59ad262fb33446ca94898a9ef70db960"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2ea9793e8c9b45e28c4499e2e63a6296"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/ownerId</from>
+				<to>attachment/ownerId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="70b181fe9ef044dcb5cd91fe6c59ee69"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>false</from>
+				<to>attachment/staged</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ff66595542434333bb894bc23cbde7ef"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>date</from>
+				<to>attachment/modified</to>
+			</steps>
+		</steps>
+		<query>attachments</query>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="baee94141c5644888f788281cb4a38b0"
+			label="attachments"
+			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="69d4f9fe10d747aab20f776cc6578fd7"
+				serviceId="nabu.services.jdbc.Services.update"
+				resultName="result2a8296c25194406d884dc80754ddbdd9"
+				temporaryMapping="true"
+				x="113"
+				y="102"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4db98e80d43448249dccfb4deb62420c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachments</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
