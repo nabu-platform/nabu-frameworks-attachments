@@ -350,7 +350,7 @@
 									mask="false"
 									optional="false"
 									fixedValue="false">
-								<from>attachments[(ownerId == /primaryKey || id == /primaryKey) &amp;&amp; attachmentTypeName == /fieldToEnrich]</from>
+								<from>attachments[(ownerId == /primaryKey &amp;&amp; attachmentTypeName == /fieldToEnrich) || id == /primaryKey]</from>
 								<to>applicableAttachments</to>
 							</steps>
 						</steps>
