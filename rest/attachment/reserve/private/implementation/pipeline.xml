@@ -1,0 +1,9 @@
+<structure interface="nabu.frameworks.attachments.rest.attachment.reserve:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.crud.attachmentType.types.output" enricher="nabu.frameworks.attachments.crud.attachmentType.services.list" name="attachmentType" persister="nabu.frameworks.attachments.crud.attachmentType.batch.updateAll"/>
+    <field minOccurs="0" name="amountOfReservations" type="java.lang.Integer"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.database.types.attachment" maxOccurs="unbounded" name="attachments"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <field minOccurs="0" name="maximumSize" type="java.lang.Long"/>
+</structure>

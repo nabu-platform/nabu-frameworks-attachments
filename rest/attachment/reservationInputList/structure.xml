@@ -1,0 +1,3 @@
+<structure name="reservationInputList">
+    <structure definition="nabu.frameworks.attachments.rest.attachment.reservationInput" maxOccurs="unbounded" minOccurs="0" name="reservations" restrict="id,attachmentTypeId"/>
+</structure>

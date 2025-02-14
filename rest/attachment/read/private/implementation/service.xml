@@ -63,5 +63,14 @@
 			<from>result13de6000534e498ba6ca8a64fd7616cd/stream</from>
 			<to>output/content</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ba2058bc11f44054939f5128b1927fdc"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result13de6000534e498ba6ca8a64fd7616cd/attachment/modified</from>
+			<to>output/cache/lastModified</to>
+		</steps>
 	</steps>
 </sequence>

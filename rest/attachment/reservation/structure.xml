@@ -1,0 +1,1 @@
+<structure allow="id, attachmentTypeId, name, title, description, contentType, priority, size" name="attachmentReservation" superType="nabu.frameworks.attachments.database.types.attachment"/>

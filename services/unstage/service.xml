@@ -47,10 +47,18 @@
 			<to>attachments</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			comment="Maybe already unstaged?"
+			disabled="false"
+			id="692e0661db4c4749b76fb0beaaff6790"
+			label="!attachments"
+			lineNumber="3">
+		<count>1</count>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="d92838e7bb0642e7ab1832e756b35dc0"
-			lineNumber="3">
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="f792c45ba3404833b6cf6eb282abdc6f"
@@ -76,12 +84,12 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.For"
 			disabled="false"
 			id="eb0180972f014bdb895147ed6f663dc2"
-			lineNumber="4"
+			lineNumber="5"
 			variable="attachment">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="59ad262fb33446ca94898a9ef70db960"
-				lineNumber="5">
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="2ea9793e8c9b45e28c4499e2e63a6296"
@@ -113,10 +121,303 @@
 		<query>attachments</query>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get the used attachment type ids, we need to perform validation before finally unstaging"
+			disabled="false"
+			id="6f8a63bda7d04095be0312719b6a1a19"
+			lineNumber="7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="71986e3723814dc6bca9530ad696c044"
+				serviceId="nabu.utils.List.unique"
+				resultName="resulta857509b9f2c43898d29fd4b30d05225"
+				temporaryMapping="true"
+				x="62"
+				y="65"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fad95f655a064b51a63584fa98b810a9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachments/attachmentTypeId</from>
+				<to>list</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="380d9106a71440568ac34d65fa78f853"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resulta857509b9f2c43898d29fd4b30d05225/list</from>
+			<to>usedAttachmentTypeIds</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			disabled="false"
+			id="bef12b330dac42dda6fb35c8e339df20"
+			label="usedAttachmentTypeIds != null"
+			lineNumber="8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="ba1e9642fd724a6187c2451e48ae399b"
+				lineNumber="9">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="96bf3630de7248a583572b09bb72e797"
+					serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+					resultName="result52f06cf4a01c4fa79786bcdb84b50648"
+					temporaryMapping="true"
+					x="52"
+					y="65"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="5e72871839cd4d59a166d47dda6ca472"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/ownerId</from>
+					<to>filter/ownerId[0]</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3775f8cd648f470db94ee953f79007d5"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>false</from>
+					<to>filter/staged</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7c6753bf1a8344a88e35d5c753635606"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>usedAttachmentTypeIds</from>
+					<to>filter/attachmentTypeId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d7fda32f9aed46c680139bf006d5d940"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>created asc</from>
+					<to>orderBy[0]</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="ad30097974474aaeb570c1b0d639898c"
+					serviceId="nabu.frameworks.attachments.crud.attachmentType.services.list"
+					resultName="resultc846fdedeeb04a5eb4362ff9dc78a36c"
+					temporaryMapping="true"
+					x="40"
+					y="147"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="20ae24ecc961498b8f00299a269d0429"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>usedAttachmentTypeIds</from>
+					<to>filter/id</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9b0538366e104fa3a9f968ce03777d89"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultc846fdedeeb04a5eb4362ff9dc78a36c/results</from>
+				<to>attachmentTypes</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="3076aa0026684a9589852e280f9b2f62"
+					serviceId="nabu.utils.List.addAll"
+					resultName="result00f4476932d64f68ac2cfd93d74f39fc"
+					temporaryMapping="true"
+					x="178"
+					y="282"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4dd21c70ee464f268c8801b815d12bf7"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>attachments</from>
+					<to>objects</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f87b6b0d22ae417aa9c197b71b38bf26"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result52f06cf4a01c4fa79786bcdb84b50648/results</from>
+					<to>list</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c440f93039da4738baaedf3d828443ad"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result00f4476932d64f68ac2cfd93d74f39fc/list</from>
+				<to>existingAttachments</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="bb8a800e120843ceb8d903cbdc0f18fa"
+				lineNumber="10"
+				variable="usedAttachmentTypeId"
+				into="existingAttachmentsToRemove">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Get existing attachments and type"
+					disabled="false"
+					id="d94b3b50400f49f4ab66c7fc3b612121"
+					lineNumber="11">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="58184ea4015844f3b3e9eac0ca0746e5"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>existingAttachments[attachmentTypeId == /usedAttachmentTypeId]</from>
+					<to>existingAttachmentsForType</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4fe2192fb6ef47fca7c1e28427d57d2d"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>attachmentTypes[id == /usedAttachmentTypeId]</from>
+					<to>attachmentType</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					comment="Enforce maximum amount by deleting the oldest one(s). We only do this for unstaged attachments."
+					disabled="false"
+					id="06b95922bb004eefb2040d19bb43e6f8"
+					label="attachmentType/maximumAmount != null &amp;&amp; attachmentType/maximumAmount &gt; 0"
+					lineNumber="12">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="a80bd27ebe60454aa0018c31a5ef74a9"
+						lineNumber="13">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="a92fb05306964f279a00b5fe5f81ec52"
+							serviceId="nabu.utils.List.size"
+							resultName="result02b7331177a5440180f2488c71200eab"
+							temporaryMapping="true"
+							x="59"
+							y="114"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="a73668b0cf004b938e09740b3a468e84"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>existingAttachmentsForType</from>
+							<to>list</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="8ae1a4cf9e1e45209b759a1bf4b6f889"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result02b7331177a5440180f2488c71200eab/size</from>
+						<to>existingAmount</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="Get the attachments to remove"
+						disabled="false"
+						id="276a9eb711044a9cba846b03b02f531f"
+						label="existingAmount &gt;= attachmentType/maximumAmount"
+						lineNumber="14">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+							disabled="false"
+							id="c34a147f3c334d4fa1daaa73f9d7c982"
+							serviceId="nabu.utils.List.getAll"
+							resultName="result069352f2c5274ed0b7f830b31b42eb8c"
+							temporaryMapping="true"
+							x="116"
+							y="62"
+							invocationOrder="0"
+							asynchronous="false"
+							recache="false">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="5ed2d239975f4e20a2102c9b31970370"
+								mask="false"
+								optional="false"
+								fixedValue="true">
+							<from>0</from>
+							<to>fromInclusive</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="bfe661e2dd0c4d57bbc67425b34dc433"
+								mask="false"
+								optional="false"
+								fixedValue="true">
+							<from>=(existingAmount - attachmentType/maximumAmount) + 1</from>
+							<to>toExclusive</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="705ee87f334047ab9abc157e6b0eb3e7"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>existingAttachmentsForType</from>
+							<to>list</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="674d06b6fbfb468182e1a0e2858b5d97"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result069352f2c5274ed0b7f830b31b42eb8c/list</from>
+						<to>existingAttachmentsToRemove</to>
+					</steps>
+				</steps>
+			</steps>
+			<query>usedAttachmentTypeIds</query>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="baee94141c5644888f788281cb4a38b0"
 			label="attachments"
-			lineNumber="6">
+			lineNumber="15">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="69d4f9fe10d747aab20f776cc6578fd7"
@@ -137,6 +438,78 @@
 				<from>attachments</from>
 				<to>instances</to>
 			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			disabled="false"
+			id="82c7ea0b3cdb43eba1ecfea6fa265b72"
+			label="existingAttachmentsToRemove"
+			lineNumber="16">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Delete them from the database"
+				disabled="false"
+				id="39fe2761d9b74dbab5feb063748925d9"
+				lineNumber="17">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="77e7add31d5941508de5318360548f0f"
+					serviceId="nabu.services.jdbc.Services.delete"
+					resultName="result85bb4d26cdd548d6a827c1ded7177d77"
+					temporaryMapping="true"
+					x="112"
+					y="99"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4a59c0fcffd841548dd9f245bc9f1065"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>existingAttachmentsToRemove</from>
+					<to>instances</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="39dea1a6def740ebbb547ad3ed12dfe9"
+				lineNumber="18"
+				variable="uriToDelete">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Delete them only if the transaction completes successfully"
+					disabled="false"
+					id="fdecc61363354a9a938edb3784501650"
+					lineNumber="19">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="c0d430c7af6345b388a65d3c81b48684"
+						serviceId="nabu.frameworks.datastore.Services.delete"
+						resultName="result28af43e2bab84159ac97f5bbf9039807"
+						temporaryMapping="true"
+						x="76"
+						y="101"
+						invocationOrder="0"
+						target="nabu.utils.providers.onTransactionClose"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="a73847212a234296b6f939daa45672fc"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>uriToDelete</from>
+						<to>uri</to>
+					</steps>
+					<targetProperties
+							collectionIndex="onCommit">true</targetProperties>
+					<targetProperties
+							collectionIndex="onRollback">false</targetProperties>
+				</steps>
+			</steps>
+			<query>existingAttachmentsToRemove/uri</query>
 		</steps>
 	</steps>
 </sequence>

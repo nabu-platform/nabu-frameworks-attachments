@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-02-14T13:53:51.544+01:00" lastModified="2025-02-14T14:19:03.402+01:00" leaf="true" version="24">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.web.application.Services.hasPermission</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.services.list</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.services.jdbc.Services.insert</references>
+    <references>nabu.frameworks.attachments.rest.attachment.reservationList</references>
+    <references>nabu.utils.List.size</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.attachments.rest.attachment.reservationInputList</references>
+    <references>nabu.frameworks.attachments.services.type.get</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.List.maximum</references>
+    <references>nabu.frameworks.attachments.database.types.attachment</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.types.output</references>
+    <references>nabu.frameworks.attachments.database.types.attachmentType</references>
+    <summary>Create initial attachment records without content for later staging</summary>
+</node>

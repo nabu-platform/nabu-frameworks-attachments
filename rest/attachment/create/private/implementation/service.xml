@@ -71,6 +71,15 @@
 				<from>input/query/priority</from>
 				<to>priority</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5cd1d5520c3049798ebc5a1c37e4d399"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/reservedId</from>
+				<to>reservedId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

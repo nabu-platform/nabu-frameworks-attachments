@@ -1,3 +1,4 @@
 <structure name="query">
     <field minOccurs="0" name="priority" type="java.lang.Long"/>
+    <field minOccurs="0" name="reservedId" type="java.util.UUID"/>
 </structure>

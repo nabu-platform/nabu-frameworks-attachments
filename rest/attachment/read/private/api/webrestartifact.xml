@@ -7,6 +7,7 @@
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <outputAsStream>true</outputAsStream>
+    <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>
     <webApplicationId>true</webApplicationId>
@@ -15,7 +16,7 @@
     <language>false</language>
     <allowFormBinding>false</allowFormBinding>
     <caseInsensitive>false</caseInsensitive>
-    <cache>false</cache>
+    <cache>true</cache>
     <allowCookiesWithoutReferer>false</allowCookiesWithoutReferer>
     <allowCookiesWithExternalReferer>false</allowCookiesWithExternalReferer>
     <request>false</request>

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/attachment/stage/{attachmentType}</path>
-    <queryParameters>priority, reservedId</queryParameters>
+    <path>/attachment/reserve/{attachmentType}</path>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
-    <inputAsStream>true</inputAsStream>
-    <output>nabu.frameworks.attachments.rest.attachment.attachment</output>
+    <input>nabu.frameworks.attachments.rest.attachment.reservationInputList</input>
+    <output>nabu.frameworks.attachments.rest.attachment.reservationList</output>
     <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>

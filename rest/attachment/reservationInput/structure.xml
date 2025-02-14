@@ -1,0 +1,3 @@
+<structure name="attachmentReservationInput" restrict="id,attachmentTypeId,priority" superType="nabu.frameworks.attachments.rest.attachment.reservation">
+    <field minOccurs="0" name="priority" type="java.lang.Long"/>
+</structure>

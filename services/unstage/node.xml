@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-02-10T12:15:42.867+01:00" lastModified="2025-02-10T12:17:29.858+01:00" leaf="true" version="4">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-02-10T12:15:42.867+01:00" lastModified="2025-02-12T11:22:20.900+01:00" leaf="true" version="15">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
-    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.providers.onTransactionClose</references>
     <references>java.util.Date</references>
     <references>nabu.frameworks.attachments.crud.attachment.services.list</references>
     <references>nabu.utils.Date.now</references>
-    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>nabu.utils.List.unique</references>
     <references>java.util.UUID</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.services.list</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.utils.List.addAll</references>
+    <references>nabu.utils.List.getAll</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.services.jdbc.Services.delete</references>
+    <references>nabu.utils.List.size</references>
+    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>nabu.frameworks.datastore.Services.delete</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.types.output</references>
+    <references>nabu.frameworks.attachments.database.types.attachmentType</references>
 </node>

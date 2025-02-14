@@ -1,0 +1,287 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="02fc9d330215459c850322b2ec4392d9"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="a62b9539f703494d8879814421e8443b"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="cc3cdd708e964fe996f54a0dbf56e2b5"
+				serviceId="nabu.frameworks.attachments.crud.attachmentType.services.list"
+				resultName="resultdf08b42d536e4391b4fc362db9e42060"
+				temporaryMapping="true"
+				x="149"
+				y="57"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="31f3b9420913403893d470818907426d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/attachmentType</from>
+				<to>filter/name[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f4a0ace5b6d848929da1e9211f8f43f4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultdf08b42d536e4391b4fc362db9e42060/results[0]</from>
+			<to>attachmentType</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0c4be63f557a4d26be4dc211c06bf3be"
+				serviceId="nabu.utils.List.size"
+				resultName="resultedd466641d34443881099c52531b8bd5"
+				temporaryMapping="true"
+				x="124"
+				y="212"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0b83e1e741a945cd9f70320d4ee463b0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/reservations</from>
+				<to>list</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="cf5d09cd29c7427f9800299b378644c3"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultedd466641d34443881099c52531b8bd5/size</from>
+			<to>amountOfReservations</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="bc8a51ca64d4488a861419dda04920eb"
+				serviceId="nabu.utils.Date.now"
+				resultName="result9c08f4b7ef1642d48f000ca6a802118d"
+				temporaryMapping="true"
+				x="361"
+				y="298"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="1503ab70bacd4f89b7de41b4c713c219"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result9c08f4b7ef1642d48f000ca6a802118d/date</from>
+			<to>now</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0b31273cbde9495dbc7ca2e629770933"
+				serviceId="nabu.utils.List.maximum"
+				resultName="result1237a55f2573499fa7f9a665139e9e6a"
+				temporaryMapping="true"
+				x="110"
+				y="402"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4cb7de9c1cb849a3968cc2bf4804b103"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/reservations[size != null]/size</from>
+				<to>list</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3b03dda5a4804cd780da1391b22b06a9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result1237a55f2573499fa7f9a665139e9e6a/maximum</from>
+			<to>maximumSize</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Invalid attachment type: &quot; + input/attachmentType"
+			disabled="false"
+			id="28d3110956cb4edcaaeccf2b2925505d"
+			label="!attachmentType"
+			lineNumber="3"
+			message="Invalid attachment type"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Too many reservations requested: &quot; + amountOfReservations + &quot; &gt; &quot; +  attachmentType/maximumAmount"
+			disabled="false"
+			id="f140d0eb129843ee9c63f1ba704da7ef"
+			label="attachmentType/maximumAmount != null &amp;&amp; amountOfReservations &gt; attachmentType/maximumAmount"
+			lineNumber="4"
+			code="400"
+			message="Too many reservations requested"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Too large reservation request: &quot; + maximumSize + &quot; &gt; &quot; + attachmentType/maximumSize"
+			disabled="false"
+			id="3d0d10e5c79d4b27a95a79cd697579ee"
+			label="maximumSize != null &amp;&amp; attachmentType/maximumSize != null &amp;&amp; maximumSize &gt; attachmentType/maximumSize"
+			lineNumber="5"
+			code="400"
+			message="Too large reservation request"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="f94af77abad14a0398051906dd0f9639"
+			lineNumber="6"
+			variable="reservation"
+			into="attachments">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map initial"
+				disabled="false"
+				id="6c98c57e1be24a438c8f36e1ee5801ae"
+				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6a7e81834c914a7994eec2562a2d2364"
+					mask="true"
+					optional="false"
+					fixedValue="false">
+				<from>reservation</from>
+				<to>attachments[0]</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map rest"
+				disabled="false"
+				id="7c5df17efcea45ebb902da25017aeea0"
+				lineNumber="8">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d8ce6f4f3e3045408c1ca559ed1d3f48"
+					serviceId="nabu.utils.Server.uuid"
+					resultName="resultb14880ef003449b99165fa1f10107d0e"
+					temporaryMapping="true"
+					x="263"
+					y="150"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6efd223a33d6471cbf4c7f2d3a18a940"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultb14880ef003449b99165fa1f10107d0e/uuid</from>
+				<to>attachments[0]/id</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c270abff3b43419d9ce9388a2e429021"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>now</from>
+				<to>attachments[0]/created</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dcfaf1870b11460681a5c18f07215f68"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>now</from>
+				<to>attachments[0]/modified</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fd5bc15bfb124bd8aa89c3fe2bd289d9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token/authenticationId</from>
+				<to>attachments[0]/ownerId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d3aca6ed248946b691d187977f8ea022"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachmentType/id</from>
+				<to>attachments[0]/attachmentTypeId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3ca3bf0999294cd2a6840c9a569f6935"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>attachments[0]/staged</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="856548a71866460983f60ace1c3245bf"
+					mask="false"
+					optional="true"
+					fixedValue="true">
+				<from>0</from>
+				<to>attachments[0]/priority</to>
+			</steps>
+		</steps>
+		<query>input/content/reservations</query>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d61fae3a6c01403fba4b319c5d6b6218"
+			label="attachments"
+			lineNumber="9">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a968019de8d545a68d0ed16c58f44a4e"
+				serviceId="nabu.services.jdbc.Services.insert"
+				resultName="resultce3c27ff369b42ccb2726749aa5dfee4"
+				temporaryMapping="true"
+				x="157"
+				y="61"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e224baafd3e9441a985b45182a071f9b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachments</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="18b6a60d28274435a6d91e4e3a779943"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>attachments</from>
+			<to>output/content/reservations</to>
+		</steps>
+	</steps>
+</sequence>

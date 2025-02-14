@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-18T10:16:15.041+02:00" lastModified="2025-02-07T12:42:24.703+01:00" leaf="true" version="62">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-09-18T10:16:15.041+02:00" lastModified="2025-02-14T16:27:52.443+01:00" leaf="true" version="72">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
-    <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
     <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.providers.onTransactionClose</references>
     <references>nabu.frameworks.datastore.Services.properties</references>
     <references>nabu.frameworks.attachments.crud.attachment.services.list</references>
     <references>nabu.utils.Server.uuid</references>
-    <references>nabu.utils.Date.now</references>
     <references>be.nabu.libs.datastore.api.DataProperties</references>
     <references>nabu.frameworks.attachments.specs.accept</references>
-    <references>java.util.UUID</references>
     <references>nabu.utils.List.getAll</references>
-    <references>nabu.frameworks.attachments.specs.created</references>
     <references>nabu.services.jdbc.Services.delete</references>
     <references>nabu.services.jdbc.Services.insert</references>
     <references>java.lang.Long</references>
-    <references>nabu.frameworks.attachments.specs.transform</references>
-    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
     <references>java.lang.Boolean</references>
-    <references>nabu.frameworks.attachments.services.type.get</references>
     <references>nabu.frameworks.datastore.Services.delete</references>
     <references>java.lang.String</references>
     <references>java.net.URI</references>
     <references>nabu.frameworks.attachments.database.types.attachment</references>
     <references>nabu.frameworks.attachments.database.types.attachmentType</references>
+    <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.attachments.crud.attachment.services.get</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.attachments.specs.created</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.attachments.specs.transform</references>
+    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>nabu.frameworks.attachments.services.type.get</references>
 </node>

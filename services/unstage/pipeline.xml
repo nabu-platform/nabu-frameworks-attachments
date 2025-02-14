@@ -6,4 +6,12 @@
     <structure name="output"/>
     <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachments" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
     <field minOccurs="0" name="date" type="java.util.Date"/>
+    <field foreignKey="nabu.frameworks.attachments.database.types.attachmentType:id" maxOccurs="unbounded" minOccurs="0" name="usedAttachmentTypeIds" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachments" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachmentsForType" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.crud.attachmentType.types.output" enricher="nabu.frameworks.attachments.crud.attachmentType.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentTypes" persister="nabu.frameworks.attachments.crud.attachmentType.batch.updateAll"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.crud.attachmentType.types.output" enricher="nabu.frameworks.attachments.crud.attachmentType.services.list" minOccurs="0" name="attachmentType" persister="nabu.frameworks.attachments.crud.attachmentType.batch.updateAll"/>
+    <field minOccurs="0" name="existingAmount" type="java.lang.Integer"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachmentsToRemove" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <field minOccurs="0" name="amountOfExistingToRemove" type="java.lang.Integer"/>
 </structure>

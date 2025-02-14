@@ -2,7 +2,7 @@
 <restInterface>
     <method>POST</method>
     <path>/attachment/{ownerId}/{attachmentType}</path>
-    <queryParameters>priority</queryParameters>
+    <queryParameters>priority, reservedId</queryParameters>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
