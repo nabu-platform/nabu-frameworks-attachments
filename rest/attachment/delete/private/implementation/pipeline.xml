@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.attachments.rest.attachment.delete:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" name="attachment" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+</structure>

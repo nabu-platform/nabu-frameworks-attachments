@@ -1,0 +1,7 @@
+<structure interface="nabu.frameworks.attachments.rest.attachment.delete:implementation" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.database.types.attachmentType" name="attachmentType"/>
+    <field name="permission" type="java.lang.String"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" name="attachment" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+</structure>

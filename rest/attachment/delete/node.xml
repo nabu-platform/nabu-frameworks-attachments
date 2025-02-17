@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-02-17T17:15:39.665+01:00" lastModified="2025-02-17T17:47:42.786+01:00" leaf="true" version="15">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.providers.onTransactionClose</references>
+    <references>nabu.web.application.Services.hasPermission</references>
+    <references>nabu.frameworks.attachments.crud.attachment.services.get</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>nabu.frameworks.attachments.crud.attachmentType.services.get</references>
+    <references>nabu.utils.String.join</references>
+    <references>nabu.services.jdbc.Services.delete</references>
+    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.datastore.Services.delete</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.attachments.database.types.attachmentType</references>
+</node>
