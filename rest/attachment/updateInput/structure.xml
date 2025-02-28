@@ -1,0 +1,1 @@
+<structure allow="name, title, description, priority" name="updateInput" superType="nabu.frameworks.attachments.database.types.attachment"/>

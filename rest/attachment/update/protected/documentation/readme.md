@@ -1,0 +1,1 @@
+You can not update the attachment itself (this is assumed immutable) but you can update the metadata surrounding it.
