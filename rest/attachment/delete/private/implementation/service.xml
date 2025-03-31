@@ -72,9 +72,54 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="e68ca1f285254e4c9f4b7f5e57109bd1"
-			label="attachment/uri != null"
+			id="4ed466e7c7f94c2dbbe24727673daca9"
 			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="6debccbe039749049204fa4d6aca2e8b"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="resultf9121d996fa24f22a4b77eaf94bba189"
+				temporaryMapping="true"
+				x="61"
+				y="40"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d876d9b49bb74cd2a92d19461dc1a2ff"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachment/uri</from>
+				<to>filter/uri[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bbaa05cf0c504e7da956094978d444e8"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>1</from>
+				<to>limit</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b7dc13582cc44ef0bcccdb0fefa9b766"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultf9121d996fa24f22a4b77eaf94bba189/page/totalRowCount</from>
+			<to>rowCount</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Delete the data if no one else is using it (we support deduplication!)"
+			disabled="false"
+			id="e68ca1f285254e4c9f4b7f5e57109bd1"
+			label="attachment/uri != null &amp;&amp; rowCount == 0"
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="529d72809d54435e944c013cd42d46a4"
