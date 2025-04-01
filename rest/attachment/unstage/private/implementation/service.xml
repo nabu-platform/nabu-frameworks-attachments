@@ -1,0 +1,41 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="87436802a93748fc8c5d357bddb33713"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="549557f1a401415088ceb48683474789"
+			label="input/content/attachments"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="75a612d75b564adc80f863ad1e5e8d4d"
+				serviceId="nabu.frameworks.attachments.services.unstage"
+				resultName="result5d91da0f085f4f2889df64d41669fe50"
+				temporaryMapping="true"
+				x="268"
+				y="67"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8f9a15ff34c449c18563ac054e87685a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/ownerId</from>
+				<to>ownerId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="77ca712aa0594de5a6046ad584e88178"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/attachments/id</from>
+				<to>attachmentIds</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
