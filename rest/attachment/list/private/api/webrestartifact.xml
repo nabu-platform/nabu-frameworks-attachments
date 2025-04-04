@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/attachment/{ownerId}/{attachmentType}</path>
+    <path>/attachments/{ownerId}/{attachmentType}</path>
+    <queryParameters>orderBy, limit, offset, q</queryParameters>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>

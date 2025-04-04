@@ -37,15 +37,6 @@
 			<from>resultc1e4ffa76eaf4468a83095325275086b/results</from>
 			<to>attachments</to>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="cb73c07e236d4002a347eee0f9566c84"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>resultc1e4ffa76eaf4468a83095325275086b/results[staged == true]</from>
-			<to>alreadyUnstaged</to>
-		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="638050600b374ef78fc5cc6cc0132efa"

@@ -1,0 +1,1 @@
+<structure allow="id, priority, title, description" name="finalizeAttachment" superType="nabu.frameworks.attachments.database.types.attachment"/>

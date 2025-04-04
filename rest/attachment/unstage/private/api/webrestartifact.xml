@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/attachment/unstage/{ownerId}</path>
+    <path>/attachments/unstage/{ownerId}</path>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <input>nabu.frameworks.attachments.rest.attachment.unstageInputList</input>
+    <output>nabu.frameworks.attachments.rest.attachment.attachmentList</output>
     <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>

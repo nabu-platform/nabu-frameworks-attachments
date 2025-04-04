@@ -79,6 +79,42 @@
 				<from>attachmentType/id</from>
 				<to>filter/attachmentTypeId[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b9293f5f9aaf4f569f5a3296d3deeedc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/orderBy</from>
+				<to>orderBy</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9039d0d674b243d0a2ba93842675bdfc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/limit</from>
+				<to>limit</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dc4496c0c09043d990e8942d39257234"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/offset</from>
+				<to>offset</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7ce15924b4d846a6aaf2e54eb8d4432c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/q</from>
+				<to>filter/q</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

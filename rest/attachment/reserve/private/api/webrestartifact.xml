@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/attachment/reserve/{attachmentType}</path>
+    <path>/attachments/reserve/{attachmentType}</path>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>

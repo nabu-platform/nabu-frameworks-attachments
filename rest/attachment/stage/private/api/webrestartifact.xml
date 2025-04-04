@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>POST</method>
-    <path>/attachment/stage/{attachmentType}</path>
+    <path>/attachments/stage/{attachmentType}</path>
     <queryParameters>priority, reservedId</queryParameters>
     <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>

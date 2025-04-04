@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-04-01T15:20:43.837+02:00" lastModified="2025-04-01T15:21:54.939+02:00" leaf="true" version="4">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.crud.attachment.services.list</references>
+    <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.attachments.utils.delete</references>
+</node>

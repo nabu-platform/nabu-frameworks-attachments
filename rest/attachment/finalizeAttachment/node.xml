@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2025-04-02T08:52:11.882+02:00" lastModified="2025-04-02T08:52:41.080+02:00" leaf="true" version="3">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.attachments.database.types.attachment</references>
+</node>

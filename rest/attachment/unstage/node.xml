@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-04-01T09:50:36.726+02:00" lastModified="2025-04-01T10:00:08.258+02:00" leaf="true" version="20">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-04-01T09:50:36.726+02:00" lastModified="2025-04-02T11:35:02.684+02:00" leaf="true" version="26">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.web.application.Services.hasPermission</references>
     <references>nabu.frameworks.attachments.crud.attachment.services.list</references>
+    <references>nabu.frameworks.attachments.rest.attachment.attachmentList</references>
     <references>nabu.frameworks.attachments.rest.attachment.unstageInputList</references>
     <references>nabu.utils.List.unique</references>
     <references>java.util.UUID</references>
@@ -13,6 +14,7 @@
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.frameworks.attachments.services.unstage</references>
     <references>nabu.utils.String.join</references>
+    <references>nabu.frameworks.attachments.utils.getLocalizedUrl</references>
     <references>nabu.frameworks.attachments.crud.attachment.types.output</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.String</references>

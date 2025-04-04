@@ -358,7 +358,7 @@
 						comment="Get the attachments to remove"
 						disabled="false"
 						id="276a9eb711044a9cba846b03b02f531f"
-						label="existingAmount &gt;= attachmentType/maximumAmount"
+						label="existingAmount &gt; attachmentType/maximumAmount"
 						lineNumber="14">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 							disabled="false"
@@ -386,7 +386,7 @@
 								mask="false"
 								optional="false"
 								fixedValue="true">
-							<from>=(existingAmount - attachmentType/maximumAmount) + 1</from>
+							<from>=existingAmount - attachmentType/maximumAmount</from>
 							<to>toExclusive</to>
 						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -441,7 +441,7 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
-			disabled="false"
+			disabled="true"
 			id="82c7ea0b3cdb43eba1ecfea6fa265b72"
 			label="existingAttachmentsToRemove"
 			lineNumber="16">
@@ -510,6 +510,34 @@
 				</steps>
 			</steps>
 			<query>existingAttachmentsToRemove/uri</query>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Use this delete, it makes sure shared resources are not deleted"
+			disabled="false"
+			id="26466ac717c149d8a9a23a895727fbaa"
+			label="existingAttachmentsToRemove"
+			lineNumber="20">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4889e920365e47548f461c9800e9832a"
+				serviceId="nabu.frameworks.attachments.utils.delete"
+				resultName="resultcda83debedda4a66a916a1fee99d9284"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f0deac688311445785709d06f7829704"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>existingAttachmentsToRemove</from>
+				<to>attachments</to>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

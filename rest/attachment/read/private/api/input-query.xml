@@ -1,1 +1,4 @@
-<structure name="query"/>
+<structure name="query">
+    <field minOccurs="0" name="code" type="java.lang.String"/>
+    <field minOccurs="0" name="as" type="java.lang.String"/>
+</structure>

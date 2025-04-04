@@ -1,0 +1,68 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="3c97021a3dea43f6b262ca5f3108027b"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="a17dd08355894fe5a23cde03e069408b"
+			label="input/attachmentIds != null"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="a5319709efbf4553a16f4ac885a1eb2e"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="result0cf70fc6891a4a9a95ffbfa37135abc9"
+				temporaryMapping="true"
+				x="35"
+				y="75"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f3ff6dd18cb24c138c62518d2897a696"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/attachmentIds</from>
+				<to>filter/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2a5ca505de574b68b134241bb49bcad9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0cf70fc6891a4a9a95ffbfa37135abc9/results</from>
+			<to>attachments</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="cf397e25012d442c817a80d3dcd4a7fc"
+			label="attachments"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="47b8b13ec99d4a9db7fe93498d92aff6"
+				serviceId="nabu.frameworks.attachments.utils.delete"
+				resultName="result3156eed54eb4431e847e16cec0a3ed67"
+				temporaryMapping="true"
+				x="116"
+				y="62"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f8559f2084be49d8ae2dca1f17195e48"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>attachments</from>
+				<to>attachments</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

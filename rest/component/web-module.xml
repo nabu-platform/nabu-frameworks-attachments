@@ -6,5 +6,5 @@
     <webFragments>nabu.frameworks.attachments.rest.attachment.stage</webFragments>
     <webFragments>nabu.frameworks.attachments.rest.attachment.reserve</webFragments>
     <webFragments>nabu.frameworks.attachments.rest.attachment.delete</webFragments>
-    <webFragments>nabu.frameworks.attachments.rest.attachment.unstage</webFragments>
+    <webFragments>nabu.frameworks.attachments.rest.attachment.finalize</webFragments>
 </webModule>

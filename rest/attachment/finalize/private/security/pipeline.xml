@@ -1,8 +1,8 @@
-<structure interface="nabu.frameworks.attachments.rest.attachment.unstage:implementation" name="pipeline">
+<structure interface="nabu.frameworks.attachments.rest.attachment.finalize:implementation" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
     <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachments" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
     <field foreignKey="nabu.frameworks.attachments.database.types.attachmentType:id" maxOccurs="unbounded" minOccurs="0" name="usedAttachmentTypeIds" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.crud.attachmentType.types.output" enricher="nabu.frameworks.attachments.crud.attachmentType.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentTypes" persister="nabu.frameworks.attachments.crud.attachmentType.batch.updateAll"/>
     <field name="permission" type="java.lang.String"/>
+    <structure collectionName="attachmentTypes" definition="nabu.frameworks.attachments.database.types.attachmentType" minOccurs="0" name="attachmentType"/>
 </structure>

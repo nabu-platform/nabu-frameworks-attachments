@@ -1,0 +1,139 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="f76bbeb72d0944289c5d118de9fefed0"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="89a8b61236e848f4abac7fd487ff36f0"
+			label="input/attachments"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8a666f9a6a5a40cab9086ffcdaab9888"
+				serviceId="nabu.services.jdbc.Services.delete"
+				resultName="result69c2e1c9e1ff4599a1926abfe44e7c0b"
+				temporaryMapping="true"
+				x="58"
+				y="58"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1ce383fd452d414d98c1525aace01890"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/attachments</from>
+				<to>instances</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e98f3f7055f04b8385f773e91c4d547e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/attachments/uri</from>
+			<to>urisToCheck</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Check if attachments remain that point to this"
+			disabled="false"
+			id="f8e71ee25e1d4bb29cd10eeb4c5b4773"
+			label="urisToCheck"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d5e33259c11a45ecbf6c5829cd772de2"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="result51fd5979f9a0415f9713f81378e70685"
+				temporaryMapping="true"
+				x="61"
+				y="69"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="598219c1d26f4f589b13c5afd8cee2b9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>urisToCheck</from>
+				<to>filter/uri</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1b43093c81354cd284b4b141d2ca4918"
+				serviceId="nabu.utils.List.unique"
+				resultName="result7994f209e89543faa271e38f7413377f"
+				temporaryMapping="true"
+				x="571"
+				y="261"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ec031ae12d784b6e906e4fd10fae7361"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result51fd5979f9a0415f9713f81378e70685/results/uri</from>
+				<to>list</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="cdced0882622480d8ef18b4255c1b8ad"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result7994f209e89543faa271e38f7413377f/list[0]</from>
+			<to>urisStillUsed</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			comment="Remove all the uris that are no longer used"
+			disabled="false"
+			id="8a6e8328b5604437a7af7bf288f8c714"
+			lineNumber="4"
+			variable="uriToDelete">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Delete the data if no one else is using it (we support deduplication!)"
+				disabled="false"
+				id="e68ca1f285254e4c9f4b7f5e57109bd1"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="529d72809d54435e944c013cd42d46a4"
+					serviceId="nabu.frameworks.datastore.Services.delete"
+					resultName="result3defae11c23a47d79e4688faadbbb9ea"
+					temporaryMapping="true"
+					x="143"
+					y="56"
+					invocationOrder="0"
+					target="nabu.utils.providers.onTransactionClose"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b02c86e28ff44892a4dbbf9c4493f5d3"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>uriToDelete</from>
+					<to>uri</to>
+				</steps>
+				<targetProperties
+						collectionIndex="onCommit">true</targetProperties>
+				<targetProperties
+						collectionIndex="onRollback">false</targetProperties>
+			</steps>
+		</steps>
+		<query>urisToCheck[$this !# /urisStillUsed]</query>
+	</steps>
+</sequence>

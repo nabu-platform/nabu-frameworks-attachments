@@ -38,4 +38,91 @@
 			</steps>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="142d53ca5110479ba7e72117834009ab"
+			label="input/content/attachments"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4d86030890bd4568a72a82429d2c2864"
+				serviceId="nabu.frameworks.attachments.crud.attachment.services.list"
+				resultName="resultfe4da426bf18494d9d1ba165da89d2a3"
+				temporaryMapping="true"
+				x="85"
+				y="70"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6b73ae434eaa4d22a6290bad84cbb834"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/content/attachments/id</from>
+				<to>filter/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="be008b85207e4e3c9ae7a7c2906e05e3"
+				mask="true"
+				optional="false"
+				fixedValue="false">
+			<from>resultfe4da426bf18494d9d1ba165da89d2a3/results</from>
+			<to>output/content/attachments</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="f0d2d4f4a80348b3b9ca9d57713e6bed"
+			lineNumber="4"
+			variable="attachment">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="cf06bea8188347f1940e2e4db1dd57e2"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="50ef2598f2fd428ba986f430c829ceb8"
+					serviceId="nabu.frameworks.attachments.utils.getLocalizedUrl"
+					resultName="resultd0ed9da28f9b46a4b237ea31309b3450"
+					temporaryMapping="true"
+					x="64"
+					y="47"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="5166353175e2407292c0ca4b22e4962e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/webApplicationId</from>
+					<to>webApplicationId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1d303a84060c4f2aa08119e7062cd983"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>attachment/id</from>
+					<to>attachmentId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a215a1c83ef7477293a64b70e21f5586"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd0ed9da28f9b46a4b237ea31309b3450/url</from>
+				<to>attachment/url</to>
+			</steps>
+		</steps>
+		<query>output/content/attachments</query>
+	</steps>
 </sequence>

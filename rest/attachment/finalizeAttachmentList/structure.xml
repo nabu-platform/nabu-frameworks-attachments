@@ -1,0 +1,3 @@
+<structure name="finalizeAttachmentList">
+    <structure allow="id, priority, title, description" definition="nabu.frameworks.attachments.rest.attachment.finalizeAttachment" maxOccurs="unbounded" minOccurs="0" name="attachments"/>
+</structure>

@@ -1,0 +1,13 @@
+<structure interface="nabu.frameworks.attachments.rest.attachment.finalize:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="existingAttachments" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentsToUnstage" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentsToDelete" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="attachmentIdsToKeep" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="allAttachmentIds" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentsToPotentiallyUpdate" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+    <structure allow="id, priority, title, description" definition="nabu.frameworks.attachments.rest.attachment.finalizeAttachment" minOccurs="0" name="attachmentInput"/>
+    <field name="changed" type="java.lang.Boolean"/>
+    <structure collectionName="attachments" definition="nabu.frameworks.attachments.crud.attachment.types.output" enricher="nabu.frameworks.attachments.crud.attachment.services.list" maxOccurs="unbounded" minOccurs="0" name="attachmentsToUpdate" persister="nabu.frameworks.attachments.crud.attachment.batch.updateAll"/>
+</structure>

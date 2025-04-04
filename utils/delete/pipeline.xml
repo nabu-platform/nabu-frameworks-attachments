@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <structure collectionName="attachments" definition="nabu.frameworks.attachments.database.types.attachment" maxOccurs="unbounded" minOccurs="0" name="attachments"/>
+    </structure>
+    <structure name="output"/>
+    <field comment="Might not yet be available if it is reserved (for later upload)" maxOccurs="unbounded" minOccurs="0" name="urisToCheck" type="java.net.URI"/>
+    <field comment="Might not yet be available if it is reserved (for later upload)" maxOccurs="unbounded" minOccurs="0" name="urisStillUsed" type="java.net.URI"/>
+</structure>

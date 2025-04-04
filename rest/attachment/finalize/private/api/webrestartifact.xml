@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
-    <method>GET</method>
-    <path>/attachment/{attachmentId}/content</path>
-    <queryParameters>code, as</queryParameters>
+    <method>POST</method>
+    <path>/attachments/{ownerId}/{attachmentType}/all</path>
+    <role>$user</role>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>false</useGlobalPermissionContext>
-    <outputAsStream>true</outputAsStream>
+    <input>nabu.frameworks.attachments.rest.attachment.finalizeAttachmentList</input>
+    <output>nabu.frameworks.attachments.rest.attachment.attachmentList</output>
     <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>
@@ -17,7 +18,7 @@
     <language>false</language>
     <allowFormBinding>false</allowFormBinding>
     <caseInsensitive>false</caseInsensitive>
-    <cache>true</cache>
+    <cache>false</cache>
     <allowCookiesWithoutReferer>false</allowCookiesWithoutReferer>
     <allowCookiesWithExternalReferer>false</allowCookiesWithExternalReferer>
     <request>false</request>
@@ -28,9 +29,6 @@
     <domain>false</domain>
     <origin>false</origin>
     <scheme>false</scheme>
-    <temporaryAlias>=input/query/as</temporaryAlias>
-    <temporarySecret>=input/query/code</temporarySecret>
-    <temporaryCorrelationId>=input/path/attachmentId</temporaryCorrelationId>
     <ignoreOffline>false</ignoreOffline>
     <allowRootArrays>false</allowRootArrays>
     <captureErrors>false</captureErrors>

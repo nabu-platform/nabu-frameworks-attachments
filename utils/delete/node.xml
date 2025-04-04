@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-04-01T15:21:16.747+02:00" lastModified="2025-04-01T15:24:23.823+02:00" leaf="true" version="7">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.services.jdbc.Services.delete</references>
+    <references>nabu.utils.providers.onTransactionClose</references>
+    <references>nabu.frameworks.attachments.crud.attachment.services.list</references>
+    <references>nabu.utils.List.unique</references>
+    <references>nabu.frameworks.datastore.Services.delete</references>
+    <references>java.net.URI</references>
+    <references>nabu.frameworks.attachments.database.types.attachment</references>
+</node>
