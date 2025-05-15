@@ -2,4 +2,5 @@
 <webModule>
     <webFragments>nabu.frameworks.attachments.crud.attachment</webFragments>
     <webFragments>nabu.frameworks.attachments.crud.attachmentType</webFragments>
+    <audience>MANAGER</audience>
 </webModule>

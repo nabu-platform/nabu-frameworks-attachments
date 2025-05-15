@@ -5,6 +5,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="79f5bcb03b5c4498b42998ca57ac8f3d"
+			label="input/attachmentTypes"
 			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
