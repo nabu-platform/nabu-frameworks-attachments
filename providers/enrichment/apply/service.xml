@@ -7,63 +7,49 @@
 			disabled="false"
 			id="3b87305be295487b90f616b598cd0745"
 			lineNumber="2">
-		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
-				id="dffa048b04f04405a68351186f5ea910"
-				lineNumber="3"
-				variable="instance"
-				into="primaryKeys">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				id="d012bc4b4855439ba8f42d3d8a4eed09"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
-					id="a1175c4762714e40bf4ae1795ccb6252"
-					lineNumber="4">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					id="d8aa1cb8772045a787a7eb3deb02b86d"
+					serviceId="nabu.utils.reflection.Type.getAll"
+					resultName="result685bc158c8b046c685a5927e7edf1721"
+					temporaryMapping="true"
+					x="187"
+					y="72"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="75326cfb527149ae9b13f55add3f19c5"
-						serviceId="nabu.utils.reflection.Type.get"
-						resultName="resultb725a743b30a41808bc53396a6e813a0"
-						temporaryMapping="true"
-						x="150"
-						y="107"
-						invocationOrder="0"
-						asynchronous="false"
-						recache="false">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="07a9a4b7d2d246629868f5d1a8780cda"
-							mask="false"
-							optional="false"
-							fixedValue="false">
-						<from>input/keyField</from>
-						<to>path</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="591c7b7c74dc455a990e86554264ef26"
-							mask="false"
-							optional="false"
-							fixedValue="false">
-						<from>instance</from>
-						<to>typeInstance</to>
-					</steps>
+						id="16a62bb59e524f9f84f1e9f383719028"
+						fixedValue="false">
+					<from>input/instances</from>
+					<to>typeInstances</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="98e232ef73b14d40acc51e345a5a32ff"
-						mask="false"
-						optional="false"
+						id="a5c686e91f954adc88b3b304d222ca91"
 						fixedValue="false">
-					<from>resultb725a743b30a41808bc53396a6e813a0/value</from>
-					<to>primaryKeys[0]</to>
+					<from>input/keyField</from>
+					<to>path</to>
 				</steps>
 			</steps>
-			<query>input/instances</query>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1c1aaeedc21540149441e46d27f0261f"
+					fixedValue="false">
+				<from>result685bc158c8b046c685a5927e7edf1721/values/value</from>
+				<to>primaryKeys</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="fde0ae28a9af4a08aad084850597459e"
 				label="primaryKeys != null"
-				lineNumber="5">
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="f3759d676f674aaaa62132917b5ea1d1"
@@ -84,6 +70,13 @@
 					<from>primaryKeys</from>
 					<to>filter/anyId</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="676a0d01124e492395a06000223c7c67"
+						fixedValue="true">
+					<from>priority desc</from>
+					<to>orderBy[0]</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
@@ -100,11 +93,11 @@
 			comment="Get field to type mapping"
 			disabled="false"
 			id="ef362f61ec364670a347c5d6d5063258"
-			lineNumber="6">
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="7ab981076f4242cc91dbfe3ba9354e06"
-				lineNumber="7">
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="08cc5c547b2a45f182530c326cd7b757"
@@ -160,12 +153,12 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.For"
 				disabled="false"
 				id="8b31a9c964bd40d69b7798c3d5485543"
-				lineNumber="8"
+				lineNumber="7"
 				variable="fieldToEnrich">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="a768e4c2860d4c5eba598be3336d604a"
-					lineNumber="9">
+					lineNumber="8">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="3ec9b8b19b384d7997ab906b48c44e8c"
@@ -210,7 +203,7 @@
 					comment="Map the configuration"
 					disabled="false"
 					id="9b6393d8712141ddb6f2e0c764aa9e31"
-					lineNumber="10">
+					lineNumber="9">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="05f591af3c96425bbeb61b497c5edc72"
@@ -258,17 +251,17 @@
 			comment="Enrich the instances"
 			disabled="false"
 			id="6f9363747891458fa2faf447ab6c7645"
-			lineNumber="11">
+			lineNumber="10">
 		<steps xsi:type="be.nabu.libs.services.vm.step.For"
 				disabled="false"
 				id="ff7689e37bbd42fab2a7affe2f5eb5e9"
-				lineNumber="12"
+				lineNumber="11"
 				variable="instance">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Get the primary key"
 					disabled="false"
 					id="1be8fba788824c449b9a231b92f5a57d"
-					lineNumber="13">
+					lineNumber="12">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="b64292e1755e49b0b760feb0a4931784"
@@ -312,13 +305,13 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.For"
 					disabled="false"
 					id="b90ba0df6cd849388ed55e8a9f8b7600"
-					lineNumber="14"
+					lineNumber="13"
 					variable="fieldToEnrich">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Get the parameter"
 						disabled="false"
 						id="8ccbaec20ecd414298eeab4df5cb5b8e"
-						lineNumber="15">
+						lineNumber="14">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="fb67d5b8fc704732b620c9d330762940"
@@ -332,18 +325,18 @@
 				<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 						disabled="false"
 						id="4d6df78c7c9e4f49b51d530856e7e952"
-						lineNumber="16"
+						lineNumber="15"
 						query="parameterToEnrich/typeName">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 							disabled="false"
 							id="1c91806c664b43e6b58c3e30e3bc777d"
 							label="&quot;anyURI&quot;"
-							lineNumber="17">
+							lineNumber="16">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 								comment="Get the attachment"
 								disabled="false"
 								id="b763be207fe541e6810501838ac96c89"
-								lineNumber="18">
+								lineNumber="17">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 									disabled="false"
 									id="b21e699c573d4542a1bbb72f718d2483"
@@ -358,11 +351,11 @@
 								disabled="false"
 								id="e5aa9d4b0c6e439282460df8af82c74b"
 								label="applicableAttachments"
-								lineNumber="19">
+								lineNumber="18">
 							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 									disabled="false"
 									id="ec6b3a2b8abc4841b92464d5f06a41f5"
-									lineNumber="20">
+									lineNumber="19">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 										disabled="false"
 										id="7660527fa9894f8b9eae830882dd4d8b"
@@ -407,7 +400,7 @@
 									comment="Get web application id"
 									disabled="false"
 									id="bac9a580018b49289bf4465cc6b2ed1f"
-									lineNumber="21">
+									lineNumber="20">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 										disabled="false"
 										id="fcce44a09a224b19a383e04a4ba7d30f"
@@ -422,7 +415,7 @@
 									disabled="false"
 									id="d8cbaa07a399411da0aebd8009cc8dce"
 									label="webApplicationId == null"
-									lineNumber="22">
+									lineNumber="21">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 										disabled="false"
 										id="7039a5029bde41df89b23b5eb15ef253"
@@ -449,13 +442,13 @@
 									disabled="false"
 									id="d34ae4ccf94d46c2b5a058b66ff86310"
 									label="webApplicationId != null"
-									lineNumber="23"
+									lineNumber="22"
 									query="parameterToEnrich/list">
 								<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 										disabled="false"
 										id="bcf6bafa6f6d46b1a923265cec3c8ba1"
 										label="false"
-										lineNumber="24">
+										lineNumber="23">
 									<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 											disabled="false"
 											id="6243e52357dc4e1dbd94651a9b63034a"
@@ -529,13 +522,13 @@
 								<steps xsi:type="be.nabu.libs.services.vm.step.For"
 										disabled="false"
 										id="8aba7afcdae24b4090e004d676932813"
-										lineNumber="25"
+										lineNumber="24"
 										variable="applicableAttachment"
 										index="applicableIndex">
 									<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 											disabled="false"
 											id="9ba91b7c502e4b1b85c5992ace1dc941"
-											lineNumber="26">
+											lineNumber="25">
 										<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 												disabled="false"
 												id="4b4833c3778b46a0b50efa288fc7289a"
@@ -615,7 +608,7 @@
 							comment="Nothing else yet"
 							disabled="false"
 							id="49d95e5bd857463b838d30a965dd62f5"
-							lineNumber="27"
+							lineNumber="26"
 							whitelist="false" xsi:nil="true"/>
 				</steps>
 				<query>input/fields</query>
